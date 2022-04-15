@@ -1,14 +1,10 @@
 package pri.hongweihao.ch10.ch10_03;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import pri.hongweihao.ch10.ch10_03.request.AbstractUserClientRequest;
 import pri.hongweihao.ch10.ch10_03.request.UserCreateClientRequest;
-import pri.hongweihao.ch10.ch10_03.response.AbstractUserClientResponse;
 import pri.hongweihao.ch10.ch10_03.response.UserCreateClientResponse;
 import pri.hongweihao.ch10.common.HttpMethodEnum;
 import pri.hongweihao.ch10.common.HttpRequest;
-import pri.hongweihao.ch10.exception.BusinessInvokeException;
-import pri.hongweihao.ch10.exception.HttpCodeNotExpectedException;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -54,7 +50,7 @@ public class UserCreateClient extends AbstractUserClient<UserCreateClientRespons
 
     public static void main(String[] args) throws IOException {
         UserCreateClientRequest req= new UserCreateClientRequest();
-        req.setUserName("hongweihao");
+        req.setUserName("pri/hongweihao");
         req.setOther("xxxxx");
         UserCreateClientResponse res = new UserCreateClient().execute(req);
         System.out.println(res.getUserId());

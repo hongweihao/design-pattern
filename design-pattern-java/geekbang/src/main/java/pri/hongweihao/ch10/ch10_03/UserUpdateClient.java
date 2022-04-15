@@ -1,9 +1,6 @@
 package pri.hongweihao.ch10.ch10_03;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import pri.hongweihao.ch10.ch10_03.request.UserCreateClientRequest;
 import pri.hongweihao.ch10.ch10_03.request.UserUpdateClientRequest;
-import pri.hongweihao.ch10.ch10_03.response.UserCreateClientResponse;
 import pri.hongweihao.ch10.ch10_03.response.UserUpdateClientResponse;
 import pri.hongweihao.ch10.common.HttpMethodEnum;
 import pri.hongweihao.ch10.common.HttpRequest;
@@ -48,7 +45,7 @@ public class UserUpdateClient extends AbstractUserClient<UserUpdateClientRespons
 
     public static void main(String[] args) throws IOException {
         UserUpdateClientRequest req= new UserUpdateClientRequest();
-        req.setUserName("hongweihao");
+        req.setUserName("pri/hongweihao");
         req.setOther("xxxxx");
         UserUpdateClientResponse res = new UserUpdateClient().execute(req);
         System.out.println(res.isOk());

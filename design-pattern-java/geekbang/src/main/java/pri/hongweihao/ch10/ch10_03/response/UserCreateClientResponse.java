@@ -2,7 +2,6 @@ package pri.hongweihao.ch10.ch10_03.response;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import pri.hongweihao.ch10.common.HttpResponse;
 
 /**
  * <p>

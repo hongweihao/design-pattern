@@ -1,13 +1,9 @@
-package pri.hongweihao.ch10.ch10_02;
+package pri.hongweihao.ch10.ch10_01;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
-import pri.hongweihao.ch10.common.HttpMethodEnum;
 import pri.hongweihao.ch10.common.UserBO;
-import pri.hongweihao.ch10.exception.BusinessInvokeException;
-import pri.hongweihao.ch10.exception.HttpCodeNotExpectedException;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -24,7 +20,7 @@ public class UserClient {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public String userCreate(UserBO userBO) throws JsonProcessingException {
+    public String userCreate(UserBO userBO) throws Exception {
         String json = objectMapper.writeValueAsString(userBO);
 
         RequestBody requestBody = RequestBody.create(json, MediaType.get("application/json; charset=utf-8"));
@@ -32,26 +28,43 @@ public class UserClient {
                 .url("https://mock.apipost.cn/app/mock/project/45824d9f-d4c3-4e61-b5d3-23347a90a1e7/api/user")
                 .post(requestBody)
                 .build();
-        try {
-            return execute(request).asText();
-        } catch (Exception e) {
-            return null;
+
+        OkHttpClient httpClient = new OkHttpClient();
+        try (Response response = httpClient.newCall(request).execute()) {
+            if (response.code() != 200) {
+                return null;
+            }
+
+            String responseBody = Objects.requireNonNull(response.body()).string();
+            JsonNode jsonNode = objectMapper.readValue(responseBody, JsonNode.class);
+            if (!jsonNode.get("ok").asBoolean()) {
+                System.out.println("failed to send request");
+                return null;
+            }
+            return jsonNode.get("data").asText();
         }
     }
 
-    public boolean userDelete(String userId) {
+    public boolean userDelete(String userId) throws IOException {
         Request request = new Request.Builder()
-                .url("https://mock.apipost.cn/app/mock/project/45824d9f-d4c3-4e61-b5d3-23347a90a1e7/api/user/" + userId)
+                .url("https://mock.apipost.cn/app/mock/project/45824d9f-d4c3-4e61-b5d3-23347a90a1e7/api/user/" +  userId)
                 .delete()
                 .build();
 
-        try {
-            execute(request);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+        OkHttpClient httpClient = new OkHttpClient();
+        try (Response response = httpClient.newCall(request).execute()) {
+            if (response.code() != 200) {
+                return false;
+            }
 
+            String responseBody = Objects.requireNonNull(response.body()).string();
+            JsonNode jsonNode = new ObjectMapper().readValue(responseBody, JsonNode.class);
+            if (!jsonNode.get("ok").asBoolean()) {
+                System.out.println("failed to send request");
+                return false;
+            }
+            return true;
+        }
     }
 
     public boolean userUpdate(UserBO userBO) throws IOException {
@@ -63,51 +76,50 @@ public class UserClient {
                 .put(requestBody)
                 .build();
 
-        try {
-            execute(request);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    public UserBO userQuery(String userId) {
-        Request request = new Request.Builder()
-                .url("https://console-mock.apipost.cn/app/mock/project/45824d9f-d4c3-4e61-b5d3-23347a90a1e7/api/user/" + userId)
-                .get()
-                .build();
-
-        JsonNode data;
-
-        try {
-            data = execute(request);
-        } catch (Exception e) {
-            return null;
-        }
-        return objectMapper.convertValue(data.get("user"), UserBO.class);
-    }
-
-    private JsonNode execute(Request request) throws IOException, HttpCodeNotExpectedException, BusinessInvokeException {
         OkHttpClient httpClient = new OkHttpClient();
         try (Response response = httpClient.newCall(request).execute()) {
             if (response.code() != 200) {
-                throw new HttpCodeNotExpectedException(response.code());
+                return false;
             }
 
             String responseBody = Objects.requireNonNull(response.body()).string();
             JsonNode jsonNode = objectMapper.readValue(responseBody, JsonNode.class);
             if (!jsonNode.get("ok").asBoolean()) {
-                throw new BusinessInvokeException(jsonNode.get("data").asText());
+                System.out.println("failed to send request");
+                return false;
+            }
+            return true;
+        }
+    }
+
+    public UserBO userQuery(String userId) throws IOException {
+        Request request = new Request.Builder()
+                .url("https://console-mock.apipost.cn/app/mock/project/45824d9f-d4c3-4e61-b5d3-23347a90a1e7/api/user/" + userId)
+                .get()
+                .build();
+
+        OkHttpClient httpClient = new OkHttpClient();
+        try (Response response = httpClient.newCall(request).execute()) {
+            if (response.code() != 200) {
+                return null;
             }
 
-            return jsonNode.get("data");
+            String responseBody = Objects.requireNonNull(response.body()).string();
+            JsonNode jsonNode = objectMapper.readValue(responseBody, JsonNode.class);
+            if (!jsonNode.get("ok").asBoolean()) {
+                System.out.println("failed to send request");
+                return null;
+            }
+
+            String data = jsonNode.get("data").get("user").asText();
+            return objectMapper.readValue(data, UserBO.class);
         }
     }
 
     public static void main(String[] args) throws Exception {
         UserClient userClient = new UserClient();
         UserBO userBO = new UserBO();
-        userBO.setUserName("hongweihao");
+        userBO.setUserName("pri/hongweihao");
         userBO.setOther("xxxxxxx");
         System.out.println(userClient.userCreate(userBO));
 
@@ -115,7 +127,7 @@ public class UserClient {
         System.out.println(deleted);
 
         UserBO userBOU = new UserBO();
-        userBOU.setUserName("hongweihao");
+        userBOU.setUserName("pri/hongweihao");
         userBOU.setOther("xxxxxxx");
         System.out.println(userClient.userUpdate(userBO));
 
