@@ -1,6 +1,7 @@
 package pri.hongweihao.ch02_1_single_resposibility_principle;
 
 import org.junit.Test;
+import pri.hongweihao.ch02.ch02_1_single_resposibility_principle.*;
 
 /**
  * <p>
@@ -11,7 +12,6 @@ import org.junit.Test;
  * @date 2022/4/14 13:56
  */
 public class SRPTest {
-
     @Test
     public void bad() throws Exception {
         VideoUserService service = new VideoUserService();
@@ -19,7 +19,6 @@ public class SRPTest {
         service.handle("USER");
         service.handle("GUEST");
     }
-
     @Test
     public void good() {
         IVideoUserService vipVideoUserService = new VipVideoUserService();
@@ -31,5 +30,4 @@ public class SRPTest {
         IVideoUserService guestVideoUserService = new GuestVideoUserService();
         System.out.println("游客用户。" + guestVideoUserService.definition() + guestVideoUserService.advertise());
     }
-
 }
