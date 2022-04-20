@@ -2,6 +2,7 @@ package pri.hongweihao.ch02_1_single_resposibility_principle;
 
 import org.junit.Test;
 import pri.hongweihao.ch02.ch02_1_single_resposibility_principle.*;
+import pri.hongweihao.ch02.ch02_1_single_resposibility_principle.bad.VideoUserService;
 
 /**
  * <p>

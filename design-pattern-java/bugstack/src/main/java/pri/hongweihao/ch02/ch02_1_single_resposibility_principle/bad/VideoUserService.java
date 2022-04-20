@@ -1,4 +1,4 @@
-package pri.hongweihao.ch02.ch02_1_single_resposibility_principle;
+package pri.hongweihao.ch02.ch02_1_single_resposibility_principle.bad;
 
 /**
  * <p>
