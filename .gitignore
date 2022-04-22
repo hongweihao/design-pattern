@@ -1,5 +1,5 @@
 /design-pattern.iml
 /design-pattern-java/.idea/*
-/design-pattern-java/target/*
+/design-pattern-java/*/target/*
 /.replit
 
