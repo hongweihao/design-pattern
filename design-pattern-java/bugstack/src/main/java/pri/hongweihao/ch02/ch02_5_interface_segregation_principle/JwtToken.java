@@ -1,4 +1,4 @@
-package pri.hongweihao.ch02.ch02_5_interface_segregation_principle.bad;
+package pri.hongweihao.ch02.ch02_5_interface_segregation_principle;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -7,7 +7,7 @@ import com.auth0.jwt.interfaces.JWTVerifier;
 
 import java.util.Date;
 
-public class JwtToken implements IToken {
+public class JwtToken implements ITokenGenerator, ITokenParser {
 
     private final String key = "xxxxx";
 
