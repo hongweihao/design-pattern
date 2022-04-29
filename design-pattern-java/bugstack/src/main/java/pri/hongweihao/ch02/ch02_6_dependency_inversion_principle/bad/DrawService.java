@@ -26,6 +26,9 @@ public class DrawService {
      * @return 中奖用户列表
      */
     public List<UserInfo> drawWeight(List<UserInfo> userInfos, int count) {
-        return userInfos.stream().sorted(Comparator.comparing(UserInfo::getWeight)).limit(count).collect(Collectors.toList());
+        return userInfos.stream()
+                .sorted(((o1, o2) -> o2.getWeight().compareTo(o1.getWeight())))
+                .limit(count)
+                .collect(Collectors.toList());
     }
 }
