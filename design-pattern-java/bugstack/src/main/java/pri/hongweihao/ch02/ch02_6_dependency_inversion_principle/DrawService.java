@@ -6,5 +6,4 @@ public class DrawService {
     public List<UserInfo> draw(IDraw draw, List<UserInfo> userInfos, int count) {
         return draw.draw(userInfos, count);
     }
-
 }

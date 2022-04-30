@@ -7,8 +7,7 @@ import com.auth0.jwt.interfaces.JWTVerifier;
 
 import java.util.Date;
 
-public class JwtToken implements ITokenGenerator, ITokenParser {
-
+public class JwtToken implements IToken, ITokenGenerator, ITokenParser {
     private final String key = "xxxxx";
 
     @Override

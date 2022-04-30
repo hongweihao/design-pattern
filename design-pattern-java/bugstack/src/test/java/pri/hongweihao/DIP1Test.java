@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 public class DIP1Test {
     @Test
     public void test() {
-
         List<UserInfo> userInfos = Arrays.asList(
                 new UserInfo("大白", 4),
                 new UserInfo("小黑", 8),
@@ -25,6 +24,5 @@ public class DIP1Test {
 
         List<UserInfo> luckUserList2 = service.drawWeight(userInfos, 2);
         System.out.println(luckUserList2.stream().map(UserInfo::getUserId).collect(Collectors.joining(",")));
-
     }
 }

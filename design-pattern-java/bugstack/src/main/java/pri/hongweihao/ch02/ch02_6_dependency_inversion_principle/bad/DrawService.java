@@ -3,7 +3,6 @@ package pri.hongweihao.ch02.ch02_6_dependency_inversion_principle.bad;
 import pri.hongweihao.ch02.ch02_6_dependency_inversion_principle.UserInfo;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 public class DIP2Test {
     @Test
     public void test() {
-
         List<UserInfo> userInfos = Arrays.asList(
                 new UserInfo("大白", 4),
                 new UserInfo("小黑", 8),

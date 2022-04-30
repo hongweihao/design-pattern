@@ -8,7 +8,6 @@ import com.auth0.jwt.interfaces.JWTVerifier;
 import java.util.Date;
 
 public class JwtToken implements IToken {
-
     private final String key = "xxxxx";
 
     @Override
