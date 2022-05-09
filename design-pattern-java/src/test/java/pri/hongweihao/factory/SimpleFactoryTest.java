@@ -1,6 +1,7 @@
-package pri.hongweihao.factory.simple_factory;
+package pri.hongweihao.factory;
 
 import org.junit.Test;
+import pri.hongweihao.factory.simple_factory.ParserFactory;
 
 public class SimpleFactoryTest {
     @Test
