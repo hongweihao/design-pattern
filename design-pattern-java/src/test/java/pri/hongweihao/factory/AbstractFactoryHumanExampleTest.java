@@ -16,7 +16,7 @@ import pri.hongweihao.factory.abstract_factory.example1.YellowHumanFactory;
  */
 public class AbstractFactoryHumanExampleTest {
     @Test
-    public void test1() {
+    public void test() {
         IHumanFactory factory;
 
         // 黑种人
