@@ -1,14 +1,10 @@
 package pri.hongweihao.factory;
 
 import org.junit.Test;
-import pri.hongweihao.factory.abstract_factory.example1.BlackHumanFactory;
-import pri.hongweihao.factory.abstract_factory.example1.IHumanFactory;
-import pri.hongweihao.factory.abstract_factory.example1.WhiteHumanFactory;
-import pri.hongweihao.factory.abstract_factory.example1.YellowHumanFactory;
-import pri.hongweihao.factory.abstract_factory.example2.ChineseFurnitureFactory;
-import pri.hongweihao.factory.abstract_factory.example2.EuropeanFurnitureFactory;
-import pri.hongweihao.factory.abstract_factory.example2.IFurnitureFactory;
-import pri.hongweihao.factory.abstract_factory.example2.MediterraneanFurnitureFactory;
+import pri.hongweihao.factory.abstract_factory.furniture.ChineseFurnitureFactory;
+import pri.hongweihao.factory.abstract_factory.furniture.EuropeanFurnitureFactory;
+import pri.hongweihao.factory.abstract_factory.furniture.IFurnitureFactory;
+import pri.hongweihao.factory.abstract_factory.furniture.MediterraneanFurnitureFactory;
 
 /**
  * <p>

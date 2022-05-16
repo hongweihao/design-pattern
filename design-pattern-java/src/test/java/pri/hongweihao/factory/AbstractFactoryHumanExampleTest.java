@@ -1,10 +1,10 @@
 package pri.hongweihao.factory;
 
 import org.junit.Test;
-import pri.hongweihao.factory.abstract_factory.example1.BlackHumanFactory;
-import pri.hongweihao.factory.abstract_factory.example1.IHumanFactory;
-import pri.hongweihao.factory.abstract_factory.example1.WhiteHumanFactory;
-import pri.hongweihao.factory.abstract_factory.example1.YellowHumanFactory;
+import pri.hongweihao.factory.abstract_factory.create_human_by_nvwa.BlackHumanFactory;
+import pri.hongweihao.factory.abstract_factory.create_human_by_nvwa.IHumanFactory;
+import pri.hongweihao.factory.abstract_factory.create_human_by_nvwa.WhiteHumanFactory;
+import pri.hongweihao.factory.abstract_factory.create_human_by_nvwa.YellowHumanFactory;
 
 /**
  * <p>
