@@ -1,15 +1,15 @@
 package pri.hongweihao.factory;
 
 import org.junit.Test;
-import pri.hongweihao.factory.simple_factory.ParserFactory;
+import pri.hongweihao.factory.simple_factory.ConfigParserFactory;
 
 public class SimpleFactoryTest {
     @Test
     public void test() {
-        ParserFactory parserFactory = new ParserFactory();
-        parserFactory.createParser("json").parse("");
-        parserFactory.createParser("yml").parse("");
-        parserFactory.createParser("xml").parse("");
-        parserFactory.createParser("properties").parse("");
+        ConfigParserFactory configParserFactory = new ConfigParserFactory();
+        configParserFactory.createParser("json").parse("");
+        configParserFactory.createParser("yml").parse("");
+        configParserFactory.createParser("xml").parse("");
+        configParserFactory.createParser("properties").parse("");
     }
 }
