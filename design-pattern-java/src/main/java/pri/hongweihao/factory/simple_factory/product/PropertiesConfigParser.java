@@ -1,7 +1,4 @@
-package pri.hongweihao.factory.simple_factory.impl;
-
-import pri.hongweihao.factory.simple_factory.Config;
-import pri.hongweihao.factory.simple_factory.IConfigParser;
+package pri.hongweihao.factory.simple_factory.product;
 
 public class PropertiesConfigParser implements IConfigParser {
     @Override

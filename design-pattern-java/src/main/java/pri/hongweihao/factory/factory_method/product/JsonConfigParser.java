@@ -1,7 +1,5 @@
-package pri.hongweihao.factory.simple_factory.impl;
+package pri.hongweihao.factory.factory_method.product;
 
-import pri.hongweihao.factory.simple_factory.Config;
-import pri.hongweihao.factory.simple_factory.IConfigParser;
 
 public class JsonConfigParser implements IConfigParser {
     @Override

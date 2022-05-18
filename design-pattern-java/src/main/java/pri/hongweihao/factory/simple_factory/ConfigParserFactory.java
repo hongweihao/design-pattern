@@ -1,9 +1,6 @@
 package pri.hongweihao.factory.simple_factory;
 
-import pri.hongweihao.factory.simple_factory.impl.JsonConfigParser;
-import pri.hongweihao.factory.simple_factory.impl.PropertiesConfigParser;
-import pri.hongweihao.factory.simple_factory.impl.XmlConfigParser;
-import pri.hongweihao.factory.simple_factory.impl.YmlConfigParser;
+import pri.hongweihao.factory.simple_factory.product.*;
 
 public class ConfigParserFactory {
     public IConfigParser createParser(String parseType) {

@@ -6,17 +6,27 @@ import pri.hongweihao.factory.factory_method.factory.*;
 public class FactoryMethodTest {
     @Test
     public void test() {
-        IParserFactory parserFactory;
-        parserFactory = new JsonParserFactory();
+        IConfigParserFactory parserFactory;
+        parserFactory = new JsonConfigParserFactory();
         parserFactory.createParser().parse("");
 
-        parserFactory = new YmlParserFactory();
+        parserFactory = new YmlConfigParserFactory();
         parserFactory.createParser().parse("");
 
-        parserFactory = new XmlParserFactory();
+        parserFactory = new XmlConfigParserFactory();
         parserFactory.createParser().parse("");
 
-        parserFactory = new PropertiesParserFactory();
+        parserFactory = new PropertiesConfigParserFactory();
         parserFactory.createParser().parse("");
     }
+
+    @Test
+    public void getFactory(){
+        ConfigParserFactory configParserFactory = new ConfigParserFactory();
+        configParserFactory.getFactory("json").createParser().parse("");
+        configParserFactory.getFactory("yml").createParser().parse("");
+        configParserFactory.getFactory("xml").createParser().parse("");
+        configParserFactory.getFactory("properties").createParser().parse("");
+    }
+
 }
