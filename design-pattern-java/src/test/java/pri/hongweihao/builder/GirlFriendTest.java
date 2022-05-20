@@ -13,7 +13,7 @@ import pri.hongweihao.builder.static_inner_class.GirlFriend;
  */
 public class GirlFriendTest {
     @Test
-    public void test(){
+    public void test() {
         GirlFriend girl = GirlFriend.builder()
                 .hair("乌黑靓丽的长发")
                 .dress("广袖流仙裙")

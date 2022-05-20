@@ -35,7 +35,7 @@ public class GirlFriend {
         System.out.println("哇，我好幸福！");
     }
 
-    public static class GirlfriendBuilder{
+    public static class GirlfriendBuilder {
         // 发型
         private String hair;
         // 穿着
