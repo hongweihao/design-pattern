@@ -28,5 +28,4 @@ public class ConfigParserFactory {
         if (type.equals("properties")) return this.propertiesConfigParserFactory;
         return null;
     }
-
 }

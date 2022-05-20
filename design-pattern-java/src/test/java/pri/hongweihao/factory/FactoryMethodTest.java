@@ -28,5 +28,4 @@ public class FactoryMethodTest {
         configParserFactory.getFactory("xml").createParser().parse("");
         configParserFactory.getFactory("properties").createParser().parse("");
     }
-
 }
