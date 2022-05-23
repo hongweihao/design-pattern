@@ -1,4 +1,4 @@
-package pri.hongweihao.builder.meet.product;
+package pri.hongweihao.builder.meeting.product;
 
 public class JoinData extends AbstractData {
     private final String user;
