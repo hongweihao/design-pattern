@@ -11,7 +11,7 @@ import pri.hongweihao.builder.static_inner_class.GirlFriend;
  * @author Karl
  * @date 2022/5/20 16:22
  */
-public class GirlFriendTest {
+public class PayloadTest {
     @Test
     public void test() {
         GirlFriend girl = GirlFriend.builder()

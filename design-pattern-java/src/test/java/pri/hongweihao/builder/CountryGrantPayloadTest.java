@@ -14,7 +14,7 @@ import pri.hongweihao.builder.build_girlfriend.SexyGirlFriendBuilder;
  * @author Karl
  * @date 2022/5/20 18:41
  */
-public class CountryGrantGirlFriendTest {
+public class CountryGrantPayloadTest {
     @Test
     public void test(){
         Country country = new Country();
