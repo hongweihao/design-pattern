@@ -16,15 +16,20 @@ import pri.hongweihao.builder.build_girlfriend.SexyGirlFriendBuilder;
  */
 public class CountryGrantPayloadTest {
     @Test
-    public void test(){
+    public void test() {
         Country country = new Country();
 
         // 刚开始你喜欢可爱性的
-        GirlFriend cuteGirl = country.construct(new CuteGirlFriendBuilder());
-        cuteGirl.print();
+        CuteGirlFriendBuilder cuteGirlFriendBuilder = new CuteGirlFriendBuilder();
+        country.construct(cuteGirlFriendBuilder);
+        cuteGirlFriendBuilder.getResult().print();
+
+        System.out.println("-----------------");
+
 
         // 后来你觉得可爱在性感面前一文不值
-        GirlFriend sexyGirl = country.construct(new SexyGirlFriendBuilder());
-        sexyGirl.print();
+        SexyGirlFriendBuilder sexyGirlFriendBuilder = new SexyGirlFriendBuilder();
+        country.construct(sexyGirlFriendBuilder);
+        sexyGirlFriendBuilder.getResult().print();
     }
 }

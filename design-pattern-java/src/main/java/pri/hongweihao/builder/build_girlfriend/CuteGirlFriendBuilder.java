@@ -35,7 +35,7 @@ public class CuteGirlFriendBuilder implements IGirlFriendBuilder {
     }
 
     @Override
-    public GirlFriend build() {
+    public GirlFriend getResult() {
         return new GirlFriend(this.hair, this.dress, this.character);
     }
 }

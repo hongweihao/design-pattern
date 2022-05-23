@@ -12,5 +12,5 @@ public interface IGirlFriendBuilder {
     IGirlFriendBuilder buildHair();
     IGirlFriendBuilder buildDress();
     IGirlFriendBuilder buildCharacter();
-    GirlFriend build();
+    GirlFriend getResult();
 }

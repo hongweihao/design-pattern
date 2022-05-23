@@ -30,12 +30,12 @@ public class SexyGirlFriendBuilder implements IGirlFriendBuilder {
 
     @Override
     public IGirlFriendBuilder buildCharacter() {
-        this.character = "腹黑开放";
+        this.character = "有点腹黑";
         return this;
     }
 
     @Override
-    public GirlFriend build() {
+    public GirlFriend getResult() {
         return new GirlFriend(this.hair, this.dress, this.character);
     }
 }

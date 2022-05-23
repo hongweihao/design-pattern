@@ -9,11 +9,9 @@ package pri.hongweihao.builder.build_girlfriend;
  * @date 2022/5/20 18:36
  */
 public class Country {
-    public GirlFriend construct(IGirlFriendBuilder builder) {
-        return builder
-                .buildHair()
+    public void construct(IGirlFriendBuilder builder) {
+        builder.buildHair()
                 .buildDress()
-                .buildCharacter()
-                .build();
+                .buildCharacter();
     }
 }
