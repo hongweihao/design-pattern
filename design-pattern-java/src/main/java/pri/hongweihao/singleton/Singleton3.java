@@ -14,18 +14,17 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Singleton3 {
     private static Singleton3 instance;
+
     private Singleton3() {
     }
 
-    private static final Lock lock = new ReentrantLock();
-
     public static Singleton3 getInstance() {
         if (Objects.isNull(instance)) {
-            lock.lock();
-            if (Objects.isNull(instance)) {
-                instance = new Singleton3();
+            synchronized (Singleton3.class) {
+                if (Objects.isNull(instance)) {
+                    instance = new Singleton3();
+                }
             }
-            lock.unlock();
         }
         return instance;
     }
