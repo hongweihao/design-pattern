@@ -9,9 +9,9 @@ package pri.hongweihao.singleton;
  * @date 2022/5/25 14:48
  */
 public enum Singleton5 {
-    _instance;
+    instance;
 
     public static Singleton5 getInstance() {
-        return _instance;
+        return instance;
     }
 }
