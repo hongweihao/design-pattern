@@ -2,8 +2,7 @@ package pri.hongweihao.adapter;
 
 /**
  * <p>
- * 旧的用户信息查询接口
- * 从本地数据库查询
+ * 用户信息查询接口
  * </p>
  *
  * @author Karl
