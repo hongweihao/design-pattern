@@ -9,7 +9,7 @@ public class AdapterTest {
         UserQuery userQuery = new UserQuery();
         userQuery.queryById("userId");
 
-        // 适配：同桌用户中心查询用户信息
+        // 适配：通过用户中心查询用户信息
         UserCenterQuery userCenterQuery = new UserCenterQuery();
 
         // 对象适配器，组合
